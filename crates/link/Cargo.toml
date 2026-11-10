@@ -1,0 +1,26 @@
+[package]
+name = "crownos-messages-link"
+description = "The crownlink client of CrownOS Messages: conversations, messages, attachments, the file chooser and notifications"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+crownlink-linux.workspace = true
+crownos-ipc.workspace = true
+crownos-messages-core.workspace = true
+futures-util.workspace = true
+percent-encoding.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+zbus.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread"] }
+
+[lints]
+workspace = true

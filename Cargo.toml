@@ -11,15 +11,29 @@ publish = false
 
 [workspace.dependencies]
 crownos-messages-core = { path = "crates/core" }
+crownos-messages-link = { path = "crates/link" }
 
+crownlink-linux = { path = "../crownlink-linux", default-features = false }
+crownos-ipc = { path = "../crownos-ipc", features = ["tokio"] }
+
+futures-util = { version = "0.3", default-features = false }
 jiff = "0.2"
 percent-encoding = "2.3"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3.27"
 thiserror = "2"
+tokio = { version = "1.54", default-features = false, features = ["macros", "rt", "sync", "time"] }
+zbus = { version = "5", default-features = false, features = ["tokio"] }
 
 [workspace.lints.clippy]
 unwrap_used = "deny"
 expect_used = "deny"
 dbg_macro = "warn"
+
+# crownlink-linux names crownos-ipc by its git URL: one checkout for both,
+# or their IPC traits would be two different crates.
+[patch."https://github.com/crown-os/crownos-ipc"]
+crownos-ipc = { path = "../crownos-ipc" }
 
 [profile.release]
 lto = "fat"

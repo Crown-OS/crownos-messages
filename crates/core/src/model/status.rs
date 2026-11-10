@@ -19,3 +19,11 @@ pub struct ContactsStatus {
     pub count: u32,
     pub photos: bool,
 }
+
+/// What a phone last said about each collection Messages reads; a field is `None` until the
+/// phone said it and whenever it stops sharing that collection.
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Hash)]
+pub struct Collections {
+    pub messages: Option<MessagingStatus>,
+    pub contacts: Option<ContactsStatus>,
+}
