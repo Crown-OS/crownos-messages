@@ -1,0 +1,16 @@
+[package]
+name = "crownos-messages-core"
+description = "Conversations, threads, drafts and sms: links of CrownOS Messages, free of UI and IPC"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+jiff.workspace = true
+percent-encoding.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
