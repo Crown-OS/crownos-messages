@@ -1,0 +1,23 @@
+[package]
+name = "crownos-messages-ui"
+description = "The CrownUI window of CrownOS Messages: conversations, threads and the composer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+crownos-messages-core.workspace = true
+crownos-messages-link.workspace = true
+crownui.workspace = true
+image.workspace = true
+jiff.workspace = true
+tokio = { workspace = true, features = ["fs", "process"] }
+
+[dev-dependencies]
+crowntest.workspace = true
+insta.workspace = true
+
+[lints]
+workspace = true
